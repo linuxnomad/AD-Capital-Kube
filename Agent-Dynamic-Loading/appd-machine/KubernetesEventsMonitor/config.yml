@@ -11,16 +11,16 @@ metricPrefix:  "Custom Metrics|KubernetesEvents|"
 kubeClientConfig: "/.kube/config"
 # Events API Key obtained from AppDynamics --> Analytics --> Configuration API Keys --> Add
 # The API Key you create needs to be able to Manage and Publish Custom Analytics Events
-eventsApiKey: "37a42738-9012-44ba-be8e-280eaea80e7a"
+eventsApiKey: ""
 # Global Account Name obtained from
 # AppDynamics --> Settings --> License --> Accounts --> Global Account Name
-accountName: "customer1_1a005e38-1560-4e59-8c8e-70c87fb03d75"
+accountName: ""
 # Name of your Custom Analytics Events Schema
 eventsSchemaName: "kubernetes_events"
 
 # Events Service Endpoint. These Default settings are for SaaS Users. Change if you are on Premise
 #eventsUrl: "https://fra-ana-api.saas.appdynamics.com:443"
-eventsUrl: "http://ec2-34-222-55-207.us-west-2.compute.amazonaws.com:9080"
+eventsUrl: "http://hostname:9080"
 
 # This is the Schema Definition that will be created if not already present
 eventsSchemaDefinition: '{
