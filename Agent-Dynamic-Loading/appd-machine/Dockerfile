@@ -2,7 +2,9 @@ FROM openjdk:8-jre-slim AS builder
 
 MAINTAINER mark.prichard@appdynamics.com
 
-ENV APPD_AGENT_VERSION 20.3.2
+ENV APPD_AGENT_VERSION 20.3.2.2520
+# after adding the version to MachineAgent.zip -> MachineAgent-20.3.2.2520.zip
+# run the command: sha256sum MachineAgent-20.3.2.2520.zip
 ENV APPD_AGENT_SHA256 f9f92a71dc023743ca409806f0909e5ed0219a203add4ec78dc262c4cf6e1c65
 
 ARG APPD_AGENT_VERSION
