@@ -8,6 +8,12 @@ ENV APPD_AGENT_SHA256 f9f92a71dc023743ca409806f0909e5ed0219a203add4ec78dc262c4cf
 ARG APPD_AGENT_VERSION
 ARG APPD_AGENT_SHA256
 
+# need to install base applications first to prevent errors:
+# /bin/sh: 1: unzip: not found
+RUN apt-get update && apt-get -y upgrade && apt-get install -y unzip && apt-get install -y apt-utils \
+    && apt-get install -y iproute2 && apt-get install -y procps && apt-get install -y sysstat && apt-get install -y git \
+    && apt-get install -y python && apt-get install -y curl && apt-get install -y zip
+
 COPY MachineAgent-${APPD_AGENT_VERSION}.zip /
 RUN echo "${APPD_AGENT_SHA256} *MachineAgent-${APPD_AGENT_VERSION}.zip" >> appd_checksum \
     && sha256sum -c appd_checksum \
